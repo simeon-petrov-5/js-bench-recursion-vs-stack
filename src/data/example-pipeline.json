@@ -1,0 +1,158 @@
+{
+  "resources": [
+    {
+      "name": "pipeline-repo",
+      "type": "git",
+      "source": {
+        "uri": "https://github.com/example/repo.git",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "busybox-image",
+      "type": "registry-image",
+      "source": {
+        "repository": "busybox",
+        "tag": "latest"
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "name": "nested-tasks",
+      "plan": [
+        {
+          "get": "pipeline-repo",
+          "trigger": true,
+          "count": 10
+        },
+        {
+          "get": "busybox-image",
+          "trigger": true
+        },
+        {
+          "task": "level-1",
+          "file": "pipeline-tasks/level-1.yml",
+          "image": "busybox-image",
+          "on_success": {
+            "do": [
+              {
+                "task": "level-2",
+                "file": "pipeline-tasks/level-2.yml",
+                "image": "busybox-image",
+                "on_success": {
+                  "do": [
+                    {
+                      "task": "level-3",
+                      "file": "pipeline-tasks/level-3.yml",
+                      "image": "busybox-image",
+                      "on_success": {
+                        "do": [
+                          {
+                            "task": "level-4",
+                            "file": "pipeline-tasks/level-4.yml",
+                            "image": "busybox-image",
+                            "on_success": {
+                              "do": [
+                                {
+                                  "task": "level-5",
+                                  "file": "pipeline-tasks/level-5.yml",
+                                  "image": "busybox-image",
+                                  "on_success": {
+                                    "do": [
+                                      {
+                                        "task": "level-6",
+                                        "file": "pipeline-tasks/level-6.yml",
+                                        "image": "busybox-image",
+                                        "on_success": {
+                                          "do": [
+                                            {
+                                              "task": "level-7",
+                                              "file": "pipeline-tasks/level-7.yml",
+                                              "image": "busybox-image",
+                                              "on_success": {
+                                                "do": [
+                                                  {
+                                                    "task": "level-8",
+                                                    "file": "pipeline-tasks/level-8.yml",
+                                                    "image": "busybox-image",
+                                                    "on_success": {
+                                                      "do": [
+                                                        {
+                                                          "task": "level-9",
+                                                          "file": "pipeline-tasks/level-9.yml",
+                                                          "image": "busybox-image",
+                                                          "on_success": {
+                                                            "do": [
+                                                              {
+                                                                "task": "level-10",
+                                                                "file": "pipeline-tasks/level-10.yml",
+                                                                "image": "busybox-image"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "on_failure": {
+            "do": [
+              {
+                "task": "failure-handler",
+                "file": "pipeline-tasks/failure-handler.yml",
+                "image": "busybox-image",
+                "on_failure": {
+                  "do": [
+                    {
+                      "task": "deep-failure-handler",
+                      "file": "pipeline-tasks/failure-handler.yml",
+                      "image": "busybox-image"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "on_abort": {
+            "do": [
+              {
+                "task": "abort-handler",
+                "file": "pipeline-tasks/abort-handler.yml",
+                "image": "busybox-image"
+              }
+            ]
+          },
+          "on_error": {
+            "do": [
+              {
+                "task": "error-handler",
+                "file": "pipeline-tasks/error-handler.yml",
+                "image": "busybox-image"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Node.js dependencies
+node_modules/
+
+# Bun dependencies
+bun.lockb
+
+# Deno dependencies
+deno.lock
+deno.json
+deno.jsonc
+
+# Package manager lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build and temporary files
+dist/
+build/
+.tmp/
+.cache/
+out/
+*.tsbuildinfo
+
+# Logs and debugging files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing and coverage
+coverage/
+test/
+tests/
+spec/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

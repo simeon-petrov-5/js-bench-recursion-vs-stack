@@ -1,0 +1,1999 @@
+{
+  "resources": [
+    {
+      "name": "lzkpa9-resource",
+      "type": "git",
+      "source": {
+        "uri": "https://github.com/example/p5nosz.git",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "iwzmnp-resource",
+      "type": "registry-image",
+      "source": {
+        "repository": "rust",
+        "tag": "v1.8"
+      }
+    },
+    {
+      "name": "ode74e-resource",
+      "type": "git",
+      "source": {
+        "uri": "https://github.com/example/pdl804.git",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "yd95oc-resource",
+      "type": "git",
+      "source": {
+        "uri": "https://github.com/example/2nwo1b.git",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "4m6kzr-resource",
+      "type": "git",
+      "source": {
+        "uri": "https://github.com/example/e6d5sg.git",
+        "branch": "main"
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "name": "job-24gui0",
+      "plan": [
+        {
+          "get": "resource-bjzzvd",
+          "trigger": false,
+          "count": 4
+        },
+        {
+          "task": "scan-0-rlsl42",
+          "file": "pipeline-tasks/scan-0-rlsl42.yml",
+          "image": "rust-image",
+          "on_error": {
+            "do": [
+              {
+                "task": "validate-1-zeluz2",
+                "file": "pipeline-tasks/validate-1-zeluz2.yml",
+                "on_success": {
+                  "do": [
+                    {
+                      "task": "test-2-w07sto",
+                      "file": "pipeline-tasks/test-2-w07sto.yml",
+                      "on_failure": {
+                        "do": [
+                          {
+                            "task": "analyze-3-jetgjh",
+                            "file": "pipeline-tasks/analyze-3-jetgjh.yml",
+                            "on_success": {
+                              "do": [
+                                {
+                                  "task": "monitor-4-di83ru",
+                                  "file": "pipeline-tasks/monitor-4-di83ru.yml",
+                                  "image": "php-image",
+                                  "on_failure": {
+                                    "do": [
+                                      {
+                                        "task": "restore-5-p39udw",
+                                        "file": "pipeline-tasks/restore-5-p39udw.yml",
+                                        "on_failure": {
+                                          "do": [
+                                            {
+                                              "task": "build-6-wt0b4h",
+                                              "file": "pipeline-tasks/build-6-wt0b4h.yml",
+                                              "on_abort": {
+                                                "do": [
+                                                  {
+                                                    "task": "restore-7-k821ot",
+                                                    "file": "pipeline-tasks/restore-7-k821ot.yml",
+                                                    "on_success": {
+                                                      "do": [
+                                                        {
+                                                          "task": "validate-8-8m3oqu",
+                                                          "file": "pipeline-tasks/validate-8-8m3oqu.yml",
+                                                          "on_failure": {
+                                                            "do": [
+                                                              {
+                                                                "task": "backup-9-89c9ky",
+                                                                "file": "pipeline-tasks/backup-9-89c9ky.yml",
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-dtvxib",
+                                                                      "file": "pipeline-tasks/notify-10-dtvxib.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-anadx7",
+                                                                            "file": "pipeline-tasks/build-11-anadx7.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-yrwgvw",
+                                                                                  "file": "pipeline-tasks/validate-12-yrwgvw.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-fz26ny",
+                                                                                  "file": "pipeline-tasks/analyze-12-fz26ny.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-mdmljy",
+                                                                                  "file": "pipeline-tasks/monitor-12-mdmljy.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "scan-11-jxrohn",
+                                                                            "file": "pipeline-tasks/scan-11-jxrohn.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-w0vcbi",
+                                                                                  "file": "pipeline-tasks/backup-12-w0vcbi.yml",
+                                                                                  "image": "alpine-image"
+                                                                                }
+                                                                              ],
+                                                                              "image": "node-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-m04gy3",
+                                                                                  "file": "pipeline-tasks/scan-12-m04gy3.yml",
+                                                                                  "image": "node-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-b8b22u",
+                                                                                  "file": "pipeline-tasks/validate-12-b8b22u.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-acvbhn",
+                                                                                  "file": "pipeline-tasks/validate-12-acvbhn.yml",
+                                                                                  "image": "rust-image"
+                                                                                }
+                                                                              ],
+                                                                              "image": "java-image"
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "image": "java-image"
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "validate-11-jqe0z5",
+                                                                            "file": "pipeline-tasks/validate-11-jqe0z5.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-7o32lp",
+                                                                                  "file": "pipeline-tasks/validate-12-7o32lp.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_success": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "monitor-10-cbwgx6",
+                                                                      "file": "pipeline-tasks/monitor-10-cbwgx6.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-eh5vt3",
+                                                                            "file": "pipeline-tasks/notify-11-eh5vt3.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-pviu69",
+                                                                                  "file": "pipeline-tasks/test-12-pviu69.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-ixgvjg",
+                                                                                  "file": "pipeline-tasks/scan-12-ixgvjg.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "php-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-2otdyp",
+                                                                                  "file": "pipeline-tasks/restore-12-2otdyp.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-n4pjh3",
+                                                                                  "file": "pipeline-tasks/analyze-12-n4pjh3.yml",
+                                                                                  "image": "golang-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-bhdfdh",
+                                                                            "file": "pipeline-tasks/test-11-bhdfdh.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-3a8j2y",
+                                                                                  "file": "pipeline-tasks/deploy-12-3a8j2y.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-fbhyi4",
+                                                                                  "file": "pipeline-tasks/test-12-fbhyi4.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-xgpf1x",
+                                                                                  "file": "pipeline-tasks/build-12-xgpf1x.yml",
+                                                                                  "image": "rust-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-5igd49",
+                                                                            "file": "pipeline-tasks/build-11-5igd49.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-n1wm6z",
+                                                                                  "file": "pipeline-tasks/restore-12-n1wm6z.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "node-image"
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-vqub6u",
+                                                                                  "file": "pipeline-tasks/notify-12-vqub6u.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "scan-11-nq6sb1",
+                                                                            "file": "pipeline-tasks/scan-11-nq6sb1.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-gd2fwq",
+                                                                                  "file": "pipeline-tasks/scan-12-gd2fwq.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-7t3dsf",
+                                                                      "file": "pipeline-tasks/notify-10-7t3dsf.yml",
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-f0dn9y",
+                                                                            "file": "pipeline-tasks/notify-11-f0dn9y.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-lqz7p2",
+                                                                                  "file": "pipeline-tasks/scan-12-lqz7p2.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-lg76ve",
+                                                                                  "file": "pipeline-tasks/backup-12-lg76ve.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-3ia64u",
+                                                                            "file": "pipeline-tasks/build-11-3ia64u.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-oeuq32",
+                                                                                  "file": "pipeline-tasks/notify-12-oeuq32.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-ta5plx",
+                                                                                  "file": "pipeline-tasks/build-12-ta5plx.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "java-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-lsm8st",
+                                                                                  "file": "pipeline-tasks/scan-12-lsm8st.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "scan-11-sw3rzj",
+                                                                            "file": "pipeline-tasks/scan-11-sw3rzj.yml",
+                                                                            "image": "php-image",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-apmz6l",
+                                                                                  "file": "pipeline-tasks/restore-12-apmz6l.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          "on_success": {
+                                                            "do": [
+                                                              {
+                                                                "task": "deploy-9-qlrleh",
+                                                                "file": "pipeline-tasks/deploy-9-qlrleh.yml",
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "validate-10-3gjzsl",
+                                                                      "file": "pipeline-tasks/validate-10-3gjzsl.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "backup-11-rbls0g",
+                                                                            "file": "pipeline-tasks/backup-11-rbls0g.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-tu50ld",
+                                                                                  "file": "pipeline-tasks/test-12-tu50ld.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "ubuntu-image"
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-kdr7id",
+                                                                            "file": "pipeline-tasks/test-11-kdr7id.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-orwnzi",
+                                                                                  "file": "pipeline-tasks/backup-12-orwnzi.yml",
+                                                                                  "image": "alpine-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-gk4rfd",
+                                                                                  "file": "pipeline-tasks/restore-12-gk4rfd.yml",
+                                                                                  "image": "php-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-g93guh",
+                                                                                  "file": "pipeline-tasks/test-12-g93guh.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-dosqr4",
+                                                                                  "file": "pipeline-tasks/scan-12-dosqr4.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "golang-image"
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "scan-11-jr7c5n",
+                                                                            "file": "pipeline-tasks/scan-11-jr7c5n.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-s2cweg",
+                                                                                  "file": "pipeline-tasks/validate-12-s2cweg.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-vjwxap",
+                                                                                  "file": "pipeline-tasks/analyze-12-vjwxap.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-613a6s",
+                                                                                  "file": "pipeline-tasks/validate-12-613a6s.yml",
+                                                                                  "image": "golang-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "scan-11-hp0b44",
+                                                                            "file": "pipeline-tasks/scan-11-hp0b44.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-r543ex",
+                                                                                  "file": "pipeline-tasks/notify-12-r543ex.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "rust-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-s5f23z",
+                                                                                  "file": "pipeline-tasks/build-12-s5f23z.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-wf3403",
+                                                                                  "file": "pipeline-tasks/test-12-wf3403.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ],
+                                                      "image": "python-image"
+                                                    },
+                                                    "on_failure": {
+                                                      "do": [
+                                                        {
+                                                          "task": "analyze-8-3ejjud",
+                                                          "file": "pipeline-tasks/analyze-8-3ejjud.yml",
+                                                          "on_failure": {
+                                                            "do": [
+                                                              {
+                                                                "task": "backup-9-jp7sh0",
+                                                                "file": "pipeline-tasks/backup-9-jp7sh0.yml",
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "scan-10-uztl8u",
+                                                                      "file": "pipeline-tasks/scan-10-uztl8u.yml",
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-8aypq9",
+                                                                            "file": "pipeline-tasks/build-11-8aypq9.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-ekz7xi",
+                                                                                  "file": "pipeline-tasks/build-12-ekz7xi.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "analyze-11-3zvput",
+                                                                            "file": "pipeline-tasks/analyze-11-3zvput.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-a9sdcu",
+                                                                                  "file": "pipeline-tasks/notify-12-a9sdcu.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "ubuntu-image"
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-o8wg3x",
+                                                                            "file": "pipeline-tasks/test-11-o8wg3x.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-0wtxdp",
+                                                                                  "file": "pipeline-tasks/notify-12-0wtxdp.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-6cj61f",
+                                                                                  "file": "pipeline-tasks/restore-12-6cj61f.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-dlq485",
+                                                                                  "file": "pipeline-tasks/scan-12-dlq485.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-fle4hf",
+                                                                                  "file": "pipeline-tasks/backup-12-fle4hf.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "image": "busybox-image"
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "restore-11-lhh8zi",
+                                                                            "file": "pipeline-tasks/restore-11-lhh8zi.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-bg7en7",
+                                                                                  "file": "pipeline-tasks/analyze-12-bg7en7.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-49237l",
+                                                                                  "file": "pipeline-tasks/analyze-12-49237l.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-95et0g",
+                                                                                  "file": "pipeline-tasks/deploy-12-95et0g.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          "on_error": {
+                                                            "do": [
+                                                              {
+                                                                "task": "scan-9-dwg6xp",
+                                                                "file": "pipeline-tasks/scan-9-dwg6xp.yml",
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "monitor-10-v9u5iw",
+                                                                      "file": "pipeline-tasks/monitor-10-v9u5iw.yml",
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "validate-11-dutoxi",
+                                                                            "file": "pipeline-tasks/validate-11-dutoxi.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-gauuyt",
+                                                                                  "file": "pipeline-tasks/test-12-gauuyt.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "ubuntu-image"
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-nh0xpg",
+                                                                                  "file": "pipeline-tasks/restore-12-nh0xpg.yml",
+                                                                                  "image": "java-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-yty4cj",
+                                                                            "file": "pipeline-tasks/notify-11-yty4cj.yml",
+                                                                            "image": "ubuntu-image",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-bgnkgy",
+                                                                                  "file": "pipeline-tasks/notify-12-bgnkgy.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "php-image"
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-usudvy",
+                                                                                  "file": "pipeline-tasks/restore-12-usudvy.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-u9t3ma",
+                                                                                  "file": "pipeline-tasks/scan-12-u9t3ma.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "rust-image"
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-0q9xv7",
+                                                                            "file": "pipeline-tasks/notify-11-0q9xv7.yml",
+                                                                            "image": "golang-image",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-ajh9yg",
+                                                                                  "file": "pipeline-tasks/test-12-ajh9yg.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "validate-10-6eb2hc",
+                                                                      "file": "pipeline-tasks/validate-10-6eb2hc.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-niy41c",
+                                                                            "file": "pipeline-tasks/build-11-niy41c.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-mp85u2",
+                                                                                  "file": "pipeline-tasks/analyze-12-mp85u2.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-ot7nw4",
+                                                                                  "file": "pipeline-tasks/monitor-12-ot7nw4.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-co8cfv",
+                                                                                  "file": "pipeline-tasks/backup-12-co8cfv.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-9ggokt",
+                                                                                  "file": "pipeline-tasks/deploy-12-9ggokt.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "restore-11-caccbr",
+                                                                            "file": "pipeline-tasks/restore-11-caccbr.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-8ahk1q",
+                                                                                  "file": "pipeline-tasks/build-12-8ahk1q.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-6e84mt",
+                                                                                  "file": "pipeline-tasks/notify-12-6e84mt.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-704djl",
+                                                                            "file": "pipeline-tasks/deploy-11-704djl.yml",
+                                                                            "image": "python-image",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-o6b9q8",
+                                                                                  "file": "pipeline-tasks/monitor-12-o6b9q8.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-pvpnk0",
+                                                                                  "file": "pipeline-tasks/analyze-12-pvpnk0.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-n8jwng",
+                                                                                  "file": "pipeline-tasks/notify-12-n8jwng.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-6o8bxd",
+                                                                                  "file": "pipeline-tasks/restore-12-6o8bxd.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "image": "python-image"
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              },
+                                              "on_error": {
+                                                "do": [
+                                                  {
+                                                    "task": "monitor-7-12gc1p",
+                                                    "file": "pipeline-tasks/monitor-7-12gc1p.yml",
+                                                    "on_failure": {
+                                                      "do": [
+                                                        {
+                                                          "task": "analyze-8-ml4xd0",
+                                                          "file": "pipeline-tasks/analyze-8-ml4xd0.yml",
+                                                          "on_failure": {
+                                                            "do": [
+                                                              {
+                                                                "task": "analyze-9-t3alew",
+                                                                "file": "pipeline-tasks/analyze-9-t3alew.yml",
+                                                                "on_error": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-lidsz0",
+                                                                      "file": "pipeline-tasks/notify-10-lidsz0.yml",
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "monitor-11-z1u5fe",
+                                                                            "file": "pipeline-tasks/monitor-11-z1u5fe.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-274j9a",
+                                                                                  "file": "pipeline-tasks/restore-12-274j9a.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-co4v60",
+                                                                                  "file": "pipeline-tasks/test-12-co4v60.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-daavcj",
+                                                                                  "file": "pipeline-tasks/deploy-12-daavcj.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-g1w39u",
+                                                                                  "file": "pipeline-tasks/deploy-12-g1w39u.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "backup-11-vi9yb4",
+                                                                            "file": "pipeline-tasks/backup-11-vi9yb4.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-ai3cv9",
+                                                                                  "file": "pipeline-tasks/test-12-ai3cv9.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          "on_error": {
+                                                            "do": [
+                                                              {
+                                                                "task": "test-9-4gld7r",
+                                                                "file": "pipeline-tasks/test-9-4gld7r.yml",
+                                                                "image": "golang-image",
+                                                                "on_success": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "restore-10-g81aif",
+                                                                      "file": "pipeline-tasks/restore-10-g81aif.yml",
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-aw08dm",
+                                                                            "file": "pipeline-tasks/test-11-aw08dm.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-gvehz7",
+                                                                                  "file": "pipeline-tasks/scan-12-gvehz7.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-to3yne",
+                                                                                  "file": "pipeline-tasks/restore-12-to3yne.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-la7zx3",
+                                                                                  "file": "pipeline-tasks/monitor-12-la7zx3.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-cz8z7o",
+                                                                                  "file": "pipeline-tasks/restore-12-cz8z7o.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-dtn3a1",
+                                                                            "file": "pipeline-tasks/build-11-dtn3a1.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-3t00am",
+                                                                                  "file": "pipeline-tasks/restore-12-3t00am.yml",
+                                                                                  "image": "alpine-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_error": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "scan-10-xd1ebt",
+                                                                      "file": "pipeline-tasks/scan-10-xd1ebt.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-tr9md6",
+                                                                            "file": "pipeline-tasks/deploy-11-tr9md6.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-f54gcn",
+                                                                                  "file": "pipeline-tasks/monitor-12-f54gcn.yml",
+                                                                                  "image": "ubuntu-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-yjfxly",
+                                                                                  "file": "pipeline-tasks/backup-12-yjfxly.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-cdnjs2",
+                                                                                  "file": "pipeline-tasks/restore-12-cdnjs2.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "java-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-tkfzgy",
+                                                                                  "file": "pipeline-tasks/monitor-12-tkfzgy.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "build-10-fvqcbi",
+                                                                      "file": "pipeline-tasks/build-10-fvqcbi.yml",
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "restore-11-n2voka",
+                                                                            "file": "pipeline-tasks/restore-11-n2voka.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-maloxw",
+                                                                                  "file": "pipeline-tasks/validate-12-maloxw.yml",
+                                                                                  "image": "golang-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-vkcp7g",
+                                                                                  "file": "pipeline-tasks/notify-12-vkcp7g.yml",
+                                                                                  "image": "busybox-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-3x79ca",
+                                                                                  "file": "pipeline-tasks/notify-12-3x79ca.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "backup-11-ft3qvg",
+                                                                            "file": "pipeline-tasks/backup-11-ft3qvg.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-mku4ah",
+                                                                                  "file": "pipeline-tasks/scan-12-mku4ah.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-ranva6",
+                                                                                  "file": "pipeline-tasks/build-12-ranva6.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-x6uev5",
+                                                                                  "file": "pipeline-tasks/build-12-x6uev5.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-8m7keb",
+                                                                                  "file": "pipeline-tasks/validate-12-8m7keb.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-jyoivr",
+                                                                            "file": "pipeline-tasks/test-11-jyoivr.yml",
+                                                                            "image": "python-image",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-5jtinh",
+                                                                                  "file": "pipeline-tasks/deploy-12-5jtinh.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-8nt7pq",
+                                                                                  "file": "pipeline-tasks/backup-12-8nt7pq.yml",
+                                                                                  "image": "php-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-fz6b12",
+                                                                                  "file": "pipeline-tasks/scan-12-fz6b12.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-e98644",
+                                                                            "file": "pipeline-tasks/notify-11-e98644.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-amj4x2",
+                                                                                  "file": "pipeline-tasks/restore-12-amj4x2.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-erwngh",
+                                                                                  "file": "pipeline-tasks/monitor-12-erwngh.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-kkkri7",
+                                                                                  "file": "pipeline-tasks/restore-12-kkkri7.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "image": "python-image"
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          "on_abort": {
+                                                            "do": [
+                                                              {
+                                                                "task": "analyze-9-ass808",
+                                                                "file": "pipeline-tasks/analyze-9-ass808.yml",
+                                                                "on_error": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "deploy-10-l35zuf",
+                                                                      "file": "pipeline-tasks/deploy-10-l35zuf.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "validate-11-d2fpkz",
+                                                                            "file": "pipeline-tasks/validate-11-d2fpkz.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-uydz9r",
+                                                                                  "file": "pipeline-tasks/validate-12-uydz9r.yml",
+                                                                                  "image": "php-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-gmyl6r",
+                                                                                  "file": "pipeline-tasks/validate-12-gmyl6r.yml",
+                                                                                  "image": "rust-image"
+                                                                                }
+                                                                              ],
+                                                                              "image": "ruby-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-mmpnlh",
+                                                                                  "file": "pipeline-tasks/deploy-12-mmpnlh.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-hra1cm",
+                                                                                  "file": "pipeline-tasks/analyze-12-hra1cm.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-sje5ey",
+                                                                            "file": "pipeline-tasks/deploy-11-sje5ey.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-3nlkng",
+                                                                                  "file": "pipeline-tasks/build-12-3nlkng.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-1w1cbo",
+                                                                                  "file": "pipeline-tasks/test-12-1w1cbo.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-jxdru1",
+                                                                                  "file": "pipeline-tasks/monitor-12-jxdru1.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-kipmw7",
+                                                                                  "file": "pipeline-tasks/monitor-12-kipmw7.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-ihzrws",
+                                                                      "file": "pipeline-tasks/notify-10-ihzrws.yml",
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "monitor-11-lzpcr4",
+                                                                            "file": "pipeline-tasks/monitor-11-lzpcr4.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-n3jlaj",
+                                                                                  "file": "pipeline-tasks/build-12-n3jlaj.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-k6qwnr",
+                                                                                  "file": "pipeline-tasks/restore-12-k6qwnr.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-xdcpnw",
+                                                                                  "file": "pipeline-tasks/test-12-xdcpnw.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-u4dfv1",
+                                                                            "file": "pipeline-tasks/deploy-11-u4dfv1.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-we9lwg",
+                                                                                  "file": "pipeline-tasks/validate-12-we9lwg.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-rie5i3",
+                                                                                  "file": "pipeline-tasks/notify-12-rie5i3.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "restore-11-ko6311",
+                                                                            "file": "pipeline-tasks/restore-11-ko6311.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-zygyuo",
+                                                                                  "file": "pipeline-tasks/restore-12-zygyuo.yml",
+                                                                                  "image": "rust-image"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-0ylc2s",
+                                                                                  "file": "pipeline-tasks/backup-12-0ylc2s.yml",
+                                                                                  "image": "python-image"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-ccawcr",
+                                                                            "file": "pipeline-tasks/deploy-11-ccawcr.yml",
+                                                                            "image": "java-image",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-6sh85d",
+                                                                                  "file": "pipeline-tasks/build-12-6sh85d.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "image": "ruby-image"
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-sy1a7h",
+                                                                      "file": "pipeline-tasks/notify-10-sy1a7h.yml",
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "analyze-11-ptbnug",
+                                                                            "file": "pipeline-tasks/analyze-11-ptbnug.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-l7fziv",
+                                                                                  "file": "pipeline-tasks/monitor-12-l7fziv.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-9v263p",
+                                                                                  "file": "pipeline-tasks/monitor-12-9v263p.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-elfqgz",
+                                                                                  "file": "pipeline-tasks/deploy-12-elfqgz.yml"
+                                                                                }
+                                                                              ],
+                                                                              "image": "golang-image"
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-bqr7pm",
+                                                                                  "file": "pipeline-tasks/notify-12-bqr7pm.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-ivl6kb",
+                                                                            "file": "pipeline-tasks/build-11-ivl6kb.yml",
+                                                                            "image": "busybox-image",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-0ztnpr",
+                                                                                  "file": "pipeline-tasks/validate-12-0ztnpr.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-kmrsgd",
+                                                                                  "file": "pipeline-tasks/monitor-12-kmrsgd.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-49s6c2",
+                                                                                  "file": "pipeline-tasks/restore-12-49s6c2.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "backup-11-0hl6ql",
+                                                                            "file": "pipeline-tasks/backup-11-0hl6ql.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-6mmxru",
+                                                                                  "file": "pipeline-tasks/backup-12-6mmxru.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-wfk12z",
+                                                                                  "file": "pipeline-tasks/build-12-wfk12z.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-g417ho",
+                                                                                  "file": "pipeline-tasks/test-12-g417ho.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              },
+                                              "on_success": {
+                                                "do": [
+                                                  {
+                                                    "task": "deploy-7-14zu03",
+                                                    "file": "pipeline-tasks/deploy-7-14zu03.yml",
+                                                    "on_failure": {
+                                                      "do": [
+                                                        {
+                                                          "task": "build-8-rv5ede",
+                                                          "file": "pipeline-tasks/build-8-rv5ede.yml",
+                                                          "on_abort": {
+                                                            "do": [
+                                                              {
+                                                                "task": "restore-9-v45s1i",
+                                                                "file": "pipeline-tasks/restore-9-v45s1i.yml",
+                                                                "on_success": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-8i9qjb",
+                                                                      "file": "pipeline-tasks/notify-10-8i9qjb.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "validate-11-i8clpw",
+                                                                            "file": "pipeline-tasks/validate-11-i8clpw.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "validate-12-5qi9et",
+                                                                                  "file": "pipeline-tasks/validate-12-5qi9et.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-vybtos",
+                                                                                  "file": "pipeline-tasks/test-12-vybtos.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-2anuh5",
+                                                                                  "file": "pipeline-tasks/build-12-2anuh5.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "monitor-11-pyrk6r",
+                                                                            "file": "pipeline-tasks/monitor-11-pyrk6r.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-bylpcs",
+                                                                                  "file": "pipeline-tasks/notify-12-bylpcs.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-cnf2va",
+                                                                                  "file": "pipeline-tasks/build-12-cnf2va.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "notify-10-k40j23",
+                                                                      "file": "pipeline-tasks/notify-10-k40j23.yml",
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "validate-11-hntzmx",
+                                                                            "file": "pipeline-tasks/validate-11-hntzmx.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-biz52i",
+                                                                                  "file": "pipeline-tasks/notify-12-biz52i.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "deploy-11-0csqx2",
+                                                                            "file": "pipeline-tasks/deploy-11-0csqx2.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-j3cz8x",
+                                                                                  "file": "pipeline-tasks/backup-12-j3cz8x.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-q8767x",
+                                                                                  "file": "pipeline-tasks/notify-12-q8767x.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-omaayu",
+                                                                                  "file": "pipeline-tasks/backup-12-omaayu.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_error": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "deploy-10-up6fip",
+                                                                      "file": "pipeline-tasks/deploy-10-up6fip.yml",
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-21jg8n",
+                                                                            "file": "pipeline-tasks/test-11-21jg8n.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "analyze-12-4x0ml9",
+                                                                                  "file": "pipeline-tasks/analyze-12-4x0ml9.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-bw1kmy",
+                                                                                  "file": "pipeline-tasks/restore-12-bw1kmy.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "backup-11-b6atar",
+                                                                            "file": "pipeline-tasks/backup-11-b6atar.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-vlm4q6",
+                                                                                  "file": "pipeline-tasks/monitor-12-vlm4q6.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "build-12-vhp8fc",
+                                                                                  "file": "pipeline-tasks/build-12-vhp8fc.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "backup-12-zhjxzc",
+                                                                                  "file": "pipeline-tasks/backup-12-zhjxzc.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-2lmw45",
+                                                                                  "file": "pipeline-tasks/notify-12-2lmw45.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_abort": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "scan-10-abathj",
+                                                                      "file": "pipeline-tasks/scan-10-abathj.yml",
+                                                                      "on_abort": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-6mwyxo",
+                                                                            "file": "pipeline-tasks/build-11-6mwyxo.yml",
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "test-12-8b6kfb",
+                                                                                  "file": "pipeline-tasks/test-12-8b6kfb.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "build-11-1kmtzi",
+                                                                            "file": "pipeline-tasks/build-11-1kmtzi.yml",
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-rfd31h",
+                                                                                  "file": "pipeline-tasks/notify-12-rfd31h.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-lwscoi",
+                                                                                  "file": "pipeline-tasks/scan-12-lwscoi.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-1jr3bu",
+                                                                                  "file": "pipeline-tasks/deploy-12-1jr3bu.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-c8a1on",
+                                                                                  "file": "pipeline-tasks/scan-12-c8a1on.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_failure": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "notify-11-izx3ac",
+                                                                            "file": "pipeline-tasks/notify-11-izx3ac.yml",
+                                                                            "on_success": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "restore-12-gdo2sm",
+                                                                                  "file": "pipeline-tasks/restore-12-gdo2sm.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "scan-12-qh0wis",
+                                                                                  "file": "pipeline-tasks/scan-12-qh0wis.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_error": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-ma4ha6",
+                                                                                  "file": "pipeline-tasks/notify-12-ma4ha6.yml"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "on_abort": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "deploy-12-9b00lr",
+                                                                                  "file": "pipeline-tasks/deploy-12-9b00lr.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          "on_failure": {
+                                                            "do": [
+                                                              {
+                                                                "task": "scan-9-5aoo3h",
+                                                                "file": "pipeline-tasks/scan-9-5aoo3h.yml",
+                                                                "on_failure": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "scan-10-kk9m8n",
+                                                                      "file": "pipeline-tasks/scan-10-kk9m8n.yml",
+                                                                      "on_success": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "test-11-4dw76d",
+                                                                            "file": "pipeline-tasks/test-11-4dw76d.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "monitor-12-dsyphv",
+                                                                                  "file": "pipeline-tasks/monitor-12-dsyphv.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      "on_error": {
+                                                                        "do": [
+                                                                          {
+                                                                            "task": "restore-11-y7obet",
+                                                                            "file": "pipeline-tasks/restore-11-y7obet.yml",
+                                                                            "on_failure": {
+                                                                              "do": [
+                                                                                {
+                                                                                  "task": "notify-12-wxlynt",
+                                                                                  "file": "pipeline-tasks/notify-12-wxlynt.yml"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "on_error": {
+                                                                  "do": [
+                                                                    {
+                                                                      "task": "monitor-10-ekcvnn",
+                                                                      "file": "pipeline-tasks/monitor-10-ekcvnn.yml"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "image": "java-image"
+    },
+    {
+      "name": "job-p1uudo",
+      "plan": [
+        {
+          "get": "resource-k7jlho",
+          "trigger": true
+        },
+        {
+          "get": "resource-u9icjr",
+          "trigger": true
+        },
+        {
+          "get": "resource-hfzzcd",
+          "trigger": false
+        }
+      ]
+    }
+  ]
+}

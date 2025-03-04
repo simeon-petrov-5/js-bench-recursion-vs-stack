@@ -1,0 +1,28 @@
+{
+  "name": "js-bench-recursion-vs-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "22.14.0",
+    "npm": "10.9.2"
+  },
+  "scripts": {
+    "bench:node": "node ./src/performance-testing.js",
+    "bench:bun": "bun run ./src/performance-testing.js",
+    "bench:deno": "deno run --allow-all ./src/performance-testing.js",
+    "bench:all": "npm run bench:bun && npm run bench:node && npm run bench:deno"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "bun": "1.2.4",
+    "deno": "2.2.2",
+    "mitata": "1.0.34"
+  }
+}
