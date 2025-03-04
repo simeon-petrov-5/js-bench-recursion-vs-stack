@@ -13,9 +13,9 @@ Using **recursion** is marginally faster (between 1.2x & 1.8x) and more memory e
 | **Bun**  | **25.47**   | **24.66**     | 22.93 – 66.66 |
 | **Node** | **43.90**   | **29.18**     | 20.91 – 1,930 |
 
-- **Deno is the fastest** on average (24.01 µs), with a tighter range.
-- **Bun is slightly slower** (25.47 µs) but still close to Deno.
-- **Node.js is significantly slower** (43.90 µs), more than **80% slower** than Deno.
+- **Deno is the fastest** on average (**24.01 µs**), but Bun has a **smaller range** (**22.93 – 66.66 µs**).
+- **Bun is slightly slower** (**25.47 µs**) but remains close to Deno.
+- **Node.js is significantly slower** (**43.90 µs**), making it **80% slower** than Deno.
 
 
 ### **Memory Usage (Lower is Better)**
