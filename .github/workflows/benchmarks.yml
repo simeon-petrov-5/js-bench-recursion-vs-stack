@@ -1,50 +1,50 @@
-name: Performance Benchmarks
+# name: Performance Benchmarks
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
-jobs:
-  benchmark:
-    runs-on: ubuntu-latest
+# jobs:
+#   benchmark:
+#     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        runtime: [node, bun, deno]
+#     strategy:
+#       matrix:
+#         runtime: [node, bun, deno]
     
-    steps:
-    - uses: actions/checkout@v4
+#     steps:
+#     - uses: actions/checkout@v4
     
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.14.0'
+#     - name: Setup Node.js
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '22.14.0'
     
-    - name: Setup Bun
-      uses: oven-sh/setup-bun@v1
-      if: matrix.runtime == 'bun'
+#     - name: Setup Bun
+#       uses: oven-sh/setup-bun@v1
+#       if: matrix.runtime == 'bun'
     
-    - name: Setup Deno
-      uses: denoland/setup-deno@v1
-      with:
-        deno-version: v2.2.2
-      if: matrix.runtime == 'deno'
+#     - name: Setup Deno
+#       uses: denoland/setup-deno@v1
+#       with:
+#         deno-version: v2.2.2
+#       if: matrix.runtime == 'deno'
     
-    - name: Install dependencies
-      run: npm install
+#     - name: Install dependencies
+#       run: npm install
     
-    - name: Run Benchmarks for ${{ matrix.runtime }}
-      run: |
-        case "${{ matrix.runtime }}" in
-          node)
-            npm run bench:node
-            ;;
-          bun)
-            npm run bench:bun
-            ;;
-          deno)
-            npm run bench:deno
-            ;;
-        esac
+#     - name: Run Benchmarks for ${{ matrix.runtime }}
+#       run: |
+#         case "${{ matrix.runtime }}" in
+#           node)
+#             npm run bench:node
+#             ;;
+#           bun)
+#             npm run bench:bun
+#             ;;
+#           deno)
+#             npm run bench:deno
+#             ;;
+#         esac
